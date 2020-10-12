@@ -23,7 +23,7 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a packer build
-      - name: Run a one-line script
+      - shell: bash
         env:
           aws_access_key:  ${{secrets.AWS_AMI_ACCESS_KEY}
           aws_secret_key: ${{secrets.AWS_AMI_SECRET_KEY}}
