@@ -24,9 +24,4 @@ jobs:
 
       # Runs a packer build
       - name: Run a one-line script
-        env:
-          aws_access_key:  ${{secrets.AWS_AMI_ACCESS_KEY}
-          aws_secret_key: ${{secrets.AWS_AMI_SECRET_KEY}}
-          aws_region: ${{secrets.AWS_AMI_REGION}}
-          subnet_id: ${{secrets.SUBNET__AMI_ID}}
         run: packer validate ubuntu-ami.json
