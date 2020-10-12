@@ -6,9 +6,9 @@ name: CI
 # events but only for the main branch
 on:
   push:
-    branches: [ a4 ]
+    branches: [ master ]
   pull_request:
-    branches: [ a4 ]
+    branches: [ master ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -24,5 +24,4 @@ jobs:
 
       # Runs a packer build
       - name: Run a one-line script
-        run: packer validate ubuntu-ami.json,
-             packer build ubuntu-ami.json
+        run: packer validate ubuntu-ami.json
