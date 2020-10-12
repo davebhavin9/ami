@@ -23,15 +23,7 @@ git s
       - uses: actions/checkout@v2
 
       # Runs a packer build
-<<<<<<< HEAD
-      - name: Run a one-line script
-        with:
-          aws_access_key:  ${{ secrets.AWS_AMI_ACCESS_KEY }}
-          aws_secret_key: ${{ secrets.AWS_AMI_SECRET_KEY }}
-          aws_region: ${{ secrets.AWS_AMI_REGION }}
-          subnet_id: ${{ secrets.SUBNET_AMI_ID }}
-        run: packer validate ubuntu-ami.json
-=======
+
       - shell: bash
         env:
           aws_access_key:  ${{secrets.AWS_AMI_ACCESS_KEY}
@@ -39,4 +31,4 @@ git s
           aws_region: ${{secrets.AWS_AMI_REGION}}
           subnet_id: ${{secrets.SUBNET_AMI_ID}}
         run: packer validate -var "$aws_access_key" / -var "$aws_secret_key" / -var "$aws_region" / -var "$subnet_id" ubuntu-ami.json
->>>>>>> b9c8868828e5aa3748fec87d7f427f7833ee48dc
+
