@@ -24,5 +24,4 @@ jobs:
 
       # Runs a packer build
       - name: Run a one-line script
-        run: packer validate ubuntu-ami.json,
-             packer build ubuntu-ami.json
+        run: packer validate ubuntu-ami.json
