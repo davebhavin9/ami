@@ -8,3 +8,5 @@ crash.log
 *.box
 
 variable.json
+
+.env
