@@ -4,7 +4,7 @@ name: Build an AMI using Packer
 on:
   push:
     branches:
-      - 'master'
+      - 'a4'
 jobs:
   packer-ami-build:
     runs-on: ubuntu-latest
