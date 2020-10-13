@@ -28,6 +28,6 @@ jobs:
           aws_access_key:  ${{ secrets.AWS_AMI_ACCESS_KEY }}
           aws_secret_key: ${{ secrets.AWS_AMI_SECRET_KEY }}
           aws_region: ${{ secrets.AWS_AMI_REGION }}
-          subnet_id: ${{ secrets.SUBNET_AMI_ID }}
+          subnet_id: ${{ secrets.SUBNET__AMI_ID }}
         run: packer build -var ''aws_access_key'="$aws_access_key"'  -var ''aws_secret_key'="$aws_secret_key"' -var ''aws_region'="$aws_region"' -var ''subnet_id'="$subnet_id"' ubuntu-ami.json
 
