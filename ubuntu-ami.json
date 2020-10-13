@@ -3,7 +3,9 @@
         "aws_region": "us-east-1",
         "subnet_id": "subnet-ab7dcf8a",
         "source_ami": "ami-0817d428a6fb68645",
-        "ssh_username": "ubuntu"
+        "ssh_username": "ubuntu",
+        "prod_account_id":""
+        
     },
     "builders": [
         {
@@ -15,6 +17,7 @@
             "subnet_id": "{{user `subnet_id`}}",
             "source_ami": "{{user `source_ami`}}",
             "ssh_username": "{{user `ssh_username`}}",
+            "ami_users": ["{{user `prod_account_id`}}"],
             "ami_name": "CSYE6225_{{timestamp}}",
             "ami_description": "Ubuntu AMI for CSYE 6225 - Fall 2020",
             "launch_block_device_mappings": [
