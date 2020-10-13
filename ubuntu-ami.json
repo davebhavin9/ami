@@ -16,7 +16,7 @@
             "subnet_id": "{{user `subnet_id`}}",
             "source_ami": "{{user `source_ami`}}",
             "ssh_username": "{{user `ssh_username`}}",
-            "ami_users": "{{user `prod_account_id`}}",
+            "ami_users": ["{{user `prod_account_id`}}"],
             "ami_name": "CSYE6225_{{timestamp}}",
             "ami_description": "Ubuntu AMI for CSYE 6225 - Fall 2020",
             "launch_block_device_mappings": [
