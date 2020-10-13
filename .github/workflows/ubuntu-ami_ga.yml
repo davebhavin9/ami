@@ -28,5 +28,6 @@ jobs:
           aws_access_key:  ${{ secrets.AWS_AMI_ACCESS_KEY }},
           aws_secret_key: ${{ secrets.AWS_AMI_SECRET_KEY }}
         run: |
-         packer build -var ''aws_access_key'="$aws_access_key"'  -var ''aws_secret_key'="$aws_secret_key"'  ubuntu-ami.json
+         echo "$aws_access_key"
+         echo "$aws_secret_key"
 
