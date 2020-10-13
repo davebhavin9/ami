@@ -12,7 +12,7 @@ jobs:
       - name: Packer build
         uses: riznob/packer-build-action@v1.1
         with:
-          templateFile: 'ubuntu.ami.json'
+          templateFile: 'ubuntu-ami.json'
           workingDir: '.'
         env:
           aws_access_key: ${{ secrets.AWS_AMI_ACCESS_KEY }}
