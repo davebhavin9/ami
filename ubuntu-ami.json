@@ -46,5 +46,5 @@
             ]
         }
     ],
-    "description":"AMI using UBUNTU 18.04 LTS build for supporting node.js and its libraries."
+    "description":"AMI using UBUNTU 18.04 LTS build for supporting node.js and its libraries"
 }
