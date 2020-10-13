@@ -1,20 +1,19 @@
-name: Run packer build on a template file
+name: Build an AMI using Packer
 
 on:
   push:
     branches:
-        - 'a4'
+      - 'a4'
 jobs:
-  packer_build:
+  packer-ami-build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - name: Packer build
-        uses: riznob/packer-build-action@v1.1
+      - uses: actions/checkout@v2
+      - name: Packer AMI Build
+        uses: zmingxie/packer-ami-builder@master
         with:
-          templateFile: 'ubuntu-ami.json'
-          varFile: 'ubuntu-ami.json'
-          workingDir: '.'
+          packerArgs: 'build ubuntu-ami.json'
+          workDir: '.'
         env:
-          aws_access_key: ${{ secrets.AWS_AMI_ACCESS_KEY }}
-          aws_secret_key: ${{ secrets.AWS_AMI_SECRET_KEY }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_AMI_ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_AMI_SECRET_KEY }}
