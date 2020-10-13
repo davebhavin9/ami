@@ -1,31 +1,25 @@
-# This is a basic workflow to help you get started with Actions
+name: Packer
 
-name: CI
-
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the main branch
 on:
   push:
-    branches: [ a4 ]
-  pull_request:
-    branches: [ a4 ]
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  packer:
     runs-on: ubuntu-latest
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    name: packer
+
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - name: Checkout Repository
+        uses: actions/checkout@v2
 
-      # Runs a packer build
+      
+      # build artifact
+      - name: Build Artifact
+        uses: operatehappy/packer-github-actions@master
+        with:
+          command: build
+          target: ubuntu-ami.json
+        env :
+           aws_access_key:  ${{ secrets.AWS_AMI_ACCESS_KEY }},
+           aws_secret_key: ${{ secrets.AWS_AMI_SECRET_KEY }}
 
-      - shell: bash
-        with: 'packer build ubuntu-ami.json'
-        env:
-          aws_access_key:  ${{ secrets.AWS_AMI_ACCESS_KEY }},
-          aws_secret_key: ${{ secrets.AWS_AMI_SECRET_KEY }}
-        
