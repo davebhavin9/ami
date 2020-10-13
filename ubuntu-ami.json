@@ -4,7 +4,7 @@
         "aws_secret_key": "",
         "aws_region": "",
         "subnet_id": "",
-        "source_ami": "ami-0e82959d4ed12de3f ",
+        "source_ami": "ami-0817d428a6fb68645",
         "ssh_username": "ubuntu"
     },
     "builders": [
