@@ -1,20 +1,32 @@
-# REference- https://github.com/zmingxie/packer-ami-builder
-name: Build an AMI using Packer
+name: CI
 
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the a4 branch
 on:
   push:
-    branches:
-      - 'a4'
+    branches: [ a4 ]
+  pull_request:
+    branches: [ a4 ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  packer-ami-build:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
     runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - name: Packer AMI Build
-        uses: zmingxie/packer-ami-builder@master
-        with:
-          packerArgs: 'build ubuntu-ami.json'
-          workDir: '.'
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: echo Hello world $AWS_ACCESS_KEY_ID $AWS_SECRET_ACCESS_KEY $prod_account_id!
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_AMI_ACCESS_KEY }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_AMI_SECRET_KEY }}
