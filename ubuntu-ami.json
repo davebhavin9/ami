@@ -1,7 +1,5 @@
 {
     "variables": {
-        "aws_region": "us-east-1",
-        "subnet_id": "subnet-ab7dcf8a",
         "source_ami": "ami-0817d428a6fb68645",
         "ssh_username": "ubuntu"
         
