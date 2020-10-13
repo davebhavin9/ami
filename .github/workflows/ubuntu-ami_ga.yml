@@ -1,25 +1,19 @@
-name: Packer
+name: Run packer build on a template file
 
 on:
   push:
-
+    branches:
+        - 'master'
 jobs:
-  packer:
+  packer_build:
     runs-on: ubuntu-latest
-    name: packer
-
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-
-      
-      # build artifact
-      - name: Build Artifact
-        uses: operatehappy/packer-github-actions@master
+      - uses: actions/checkout@v1
+      - name: Packer build
+        uses: riznob/packer-build-action@v1.1
         with:
-          command: build
-          target: ubuntu-ami.json
-        env :
-           aws_access_key:  ${{ secrets.AWS_AMI_ACCESS_KEY }},
-           aws_secret_key: ${{ secrets.AWS_AMI_SECRET_KEY }}
-
+          templateFile: 'ubuntu.ami.json'
+          workingDir: '.'
+        env:
+          aws_access_key: ${{ secrets.AWS_AMI_ACCESS_KEY }}
+          aws_secret_key: ${{ secrets.AWS_AMI_SECRET_KEY }}
