@@ -24,10 +24,8 @@ jobs:
       # Runs a packer build
 
       - shell: bash
+        with: 'packer build ubuntu-ami.json'
         env:
           aws_access_key:  ${{ secrets.AWS_AMI_ACCESS_KEY }},
           aws_secret_key: ${{ secrets.AWS_AMI_SECRET_KEY }}
-        run: |
-         echo "$aws_access_key"
-         echo "$aws_secret_key"
-
+        
