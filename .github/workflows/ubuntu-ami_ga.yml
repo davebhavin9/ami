@@ -1,9 +1,10 @@
+# REference- https://github.com/zmingxie/packer-ami-builder
 name: Build an AMI using Packer
 
 on:
   push:
     branches:
-      - 'a4'
+      - 'master'
 jobs:
   packer-ami-build:
     runs-on: ubuntu-latest
