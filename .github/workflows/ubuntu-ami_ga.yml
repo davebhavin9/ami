@@ -3,8 +3,11 @@ name: CI
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the a4 branch
 on:
-  pull_request:
-    branches:  main 
+   pull_request:
+    branches: [ main ]
+   push:
+    branches: [ main ]
+  
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
