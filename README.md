@@ -1,4 +1,4 @@
-# ami
+# ami.
 
 # Installation.
 
