@@ -1,6 +1,6 @@
-# ami
+# ami.
 
-# Installation
+# Installation.
 
 # Download packer instruction for ubuntu
 
