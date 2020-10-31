@@ -8,19 +8,12 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  packer-ami:
+  work:
     runs-on: ubuntu-latest
-    name: packer
-
+    
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-
-      # build artifact
-      - name: Build Artifact
-        uses: santisaez/packer-action@v1
-        with:
-         template: ubuntu-ami.json
+      - name: Building ami and sharing it with prod account using ami
+        run: packer build -var 'aws_access_key'=$AWS_ACCESS_KEY_ID  -var 'aws_secret_key'=$AWS_SECRET_ACCESS_KEY -var prod_account_id=$prod_account_id -var 'aws_region'=$aws_region -var 'subnet_id'=$subnet_id  ubuntu-ami.json
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_AMI_ACCESS_KEY }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_AMI_SECRET_KEY }}
