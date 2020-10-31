@@ -12,11 +12,19 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+
       - name: Building ami and sharing it with prod account using ami
-        run: packer build -var 'aws_access_key'=$AWS_ACCESS_KEY_ID  -var 'aws_secret_key'=$AWS_SECRET_ACCESS_KEY -var prod_account_id=$prod_account_id -var 'aws_region'=$aws_region -var 'subnet_id'=$subnet_id  ubuntu-ami.json
-        env:
+      - run: packer build -var 'aws_access_key'=$AWS_ACCESS_KEY_ID  -var 'aws_secret_key'=$AWS_SECRET_ACCESS_KEY -var prod_account_id=$prod_account_id -var 'aws_region'=$aws_region -var 'subnet_id'=$subnet_id  ubuntu-ami.json
+      - env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_AMI_ACCESS_KEY }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_AMI_SECRET_KEY }}
           prod_account_id: ${{ secrets.PROD_ACCOUNT_ID }}
           aws_region: ${{ secrets.AWS_AMI_REGION }}
           subnet_id: ${{ secrets.SUBNET__AMI_ID }}
+
