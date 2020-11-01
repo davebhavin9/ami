@@ -1,0 +1,8 @@
+{
+    "name": "Packer -ami",
+    "description": "github actions workflow for packer ami",
+    "iconName": "github",
+    "filePatterns": [
+        "ubuntu-ami.json$"
+    ]
+}
