@@ -44,7 +44,7 @@
                 "sudo apt-get install ruby -y",
                 "sudo apt-get install wget -y",
                 "cd /home/ubuntu",
-                "wget https://codedeploy.davebhavin.me.s3.us-east-1.amazonaws.com/latest/install",
+                "wget https://codedeploy-davebhavin-me.s3.us-east-1.amazonaws.com/latest/install",
                 "sudo ./install auto",
                 "sudo service codedeploy-agent status",
                 "sudo service codedeploy-agent start",
