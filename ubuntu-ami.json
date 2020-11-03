@@ -37,12 +37,12 @@
             ],
             "inline": [
                 "sudo apt-get update",
-                "sudo apt-get install ruby-full",
                 "sudo apt-get install curl",
                 "sudo apt-get install wget",
                 "curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -",
                 "sudo apt-get install -y nodejs",
                 "sudo apt install nodejs",
+                "sudo apt-get install ruby",
                 "cd /home/ubuntu",
                 "wget https://codedeploy.davebhavin.me.s3.us-east-1.amazonaws.com/latest/install",
                 "sudo ./install auto",
