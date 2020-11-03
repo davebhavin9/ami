@@ -37,7 +37,7 @@
             ],
             "inline": [
                 "sudo apt-get update",
-                "sudo apt-get install ruby",
+                "sudo apt-get install ruby-full",
                 "sudo apt-get install curl",
                 "sudo apt-get install wget",
                 "curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -",
