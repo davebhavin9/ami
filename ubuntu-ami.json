@@ -37,10 +37,19 @@
             ],
             "inline": [
                 "sudo apt-get update",
+                "sudo apt-get install ruby",
                 "sudo apt-get install curl",
+                "sudo apt-get install wget",
                 "curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -",
                 "sudo apt-get install -y nodejs",
-                "sudo apt install nodejs"
+                "sudo apt install nodejs",
+                "cd /home/ubuntu",
+                "wget https://codedeploy.davebhavin.me.s3.us-east-1.amazonaws.com/latest/install",
+                "sudo ./install auto",
+                "sudo service codedeploy-agent status",
+                "sudo service codedeploy-agent start",
+                "sudo service codedeploy-agent status",
+                "sudo apt install unzip"
             ]
         }
     ],
