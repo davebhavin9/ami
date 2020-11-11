@@ -38,13 +38,11 @@
             "inline": [
                 "sudo apt-get update",
                 "sudo apt-get install curl",
-                "sudo apt-get install -y yum",
                 "curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -",
                 "sudo apt-get install -y nodejs",
                 "sudo apt install nodejs",
                 "sudo apt-get install ruby -y",
                 "sudo apt-get install wget -y",
-                "sudo yum install amazon-cloudwatch-agent",
                 "sudo wget https://s3.amazonaws.com/amazoncloudwatch-agent/amazon_linux/amd64/latest/amazon-cloudwatch-agent.rpm",
                 "sudo rpm -U ./amazon-cloudwatch-agent.rpm",
                 "cd /home/ubuntu",
